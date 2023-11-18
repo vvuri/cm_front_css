@@ -4,6 +4,7 @@
   "description": "HomeWorkCSS",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/vvuri/cm_front_css/issues"
   },
-  "homepage": "https://github.com/vvuri/cm_front_css#readme"
+  "homepage": "https://github.com/vvuri/cm_front_css#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
 }
