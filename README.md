@@ -23,4 +23,11 @@ Home Work 5
 13. Add 'devServer' param in webpack.config.js -> autoreboot page http://localhost:9000
 14. Add entry point in webpack.config.js -> ``` $ npm run dev ``` -> /dist/index.2a807a189b9b51451290.js  
 15. Clear /dist ``` $ npm i -D filemanager-webpack-plugin ``` + FileManagerPlugin in config
-
+16. Create production script "build": "webpack --mode production" -> ``` $ npm run build ```
+17. Babel: [Can I use](https://caniuse.com/) 
+18. ``` $ npm i -D @babel/core @babel/preset-env babel-loader ```
+19. Create config .babelrc and add in webpack.config.js
+20. Support SCSS: ``` $ npm i -D sass-loader postcss-loader postcss-preset-env css-loader style-loader sass ```
+21. Extract CSS from JS ``` $ npm i -D mini-css-extract-plugin ``` 
+22. Add module.rules for SCSS in webpack.config.js
+23. Add postcss.config.js -> ``` $ npm run serve ``` or ``` $ npm run build ```
