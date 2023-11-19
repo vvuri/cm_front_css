@@ -30,4 +30,5 @@ Home Work 5
 20. Support SCSS: ``` $ npm i -D sass-loader postcss-loader postcss-preset-env css-loader style-loader sass ```
 21. Extract CSS from JS ``` $ npm i -D mini-css-extract-plugin ``` 
 22. Add module.rules for SCSS in webpack.config.js
-23. Add postcss.config.js -> ``` $ npm run serve ``` or ``` $ npm run build ```
+23. Add postcss.config.js for support old browsers -> ``` $ npm run serve ``` 
+24. Add "import './main.scss';" in src/index.js -> ``` $ npm run build ```
