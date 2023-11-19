@@ -4,8 +4,10 @@ Course frontend 2023
 ## FrontEnd course CSS 
 Home Work 5
 
-## Run for develop
-``` $ npm run serve ```
+## Buid env
+- staging: ``` $ npm run dev ```
+- production: ``` $ npm run build ```
+- local development: ``` $ npm run serve ```
 
 ## Steps
 1. Create new repository on github
