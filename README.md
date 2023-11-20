@@ -34,3 +34,13 @@ Home Work 5
 22. Add module.rules for SCSS in webpack.config.js
 23. Add postcss.config.js for support old browsers -> ``` $ npm run serve ``` 
 24. Add "import './main.scss';" in src/index.js -> ``` $ npm run build ```
+25. For images use Asset Modules webpack module and in html ```<img src=<%=require("./images/logo.svg")%> alt="logo">```
+
+## Documentation
+- [Habr step by step](https://habr.com/ru/articles/701724/)
+- [Material RUS](https://gruzdevv.ru/stati/materialnyj-dizajn-spetsifikatsii-google/)
+- [Material](https://m3.material.io/develop/android/jetpack-compose) 
+- [CSS](https://www.w3schools.com/css/default.asp)
+- [SASS](https://sass-lang.com/)
+- [mdn: grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)
+- [БЭМ](https://ru.bem.info/methodology/)
