@@ -44,3 +44,4 @@ Home Work 5
 - [SASS](https://sass-lang.com/)
 - [mdn: grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)
 - [БЭМ](https://ru.bem.info/methodology/)
+- [Matirial Navigation](https://m3.material.io/components/navigation-drawer/specs)
