@@ -1,5 +1,50 @@
-// $breakpoint-desctop-width: 1600px;
-$breakpoint-laptop: 900px;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300..600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+:root {
+    /* light */
+    --md-sys-color-surface-light: #FEF7FF;
+
+    --md-sys-color-primary-container-light: #d2e4ff;
+    --md-sys-color-on-primary-container-light: #001d36;
+    --md-sys-color-on-surface-light: #1a1c1e;
+    --md-sys-color-on-surface-variant-light: #43474e;
+    --md-sys-color-surface-container-highest-light: #e2e2e6;
+    --md-sys-color-surface-container-light: #eeedf1;
+
+    /* dark */
+    --md-sys-color-surface-dark: #121316; //-
+
+    --md-sys-color-primary-container-dark: #00497e;
+    --md-sys-color-on-primary-container-dark: #d2e4ff;
+
+    --md-sys-color-on-surface-dark: #c6c6ca;
+    --md-sys-color-on-surface-variant-dark: #c3c6cf;
+    --md-sys-color-surface-container-highest-dark: #333538;
+    --md-sys-color-surface-container-dark: #1e2022;
+
+    @media(prefers-color-scheme: light) {
+        --md-sys-color-primary-container: var(--md-sys-color-primary-container-light);
+        --md-sys-color-on-primary-container: var(--md-sys-color-on-primary-container-light);
+        --md-sys-color-surface: var(--md-sys-color-surface-light);
+        --md-sys-color-on-surface: var(--md-sys-color-on-surface-light);
+        --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-light);
+        --md-sys-color-surface-container-highest: var(--md-sys-color-surface-container-highest-light);
+        --md-sys-color-surface-container: var(--md-sys-color-surface-container-light);
+    }
+
+    @media(prefers-color-scheme: dark) {
+        --md-sys-color-primary-container: var(--md-sys-color-primary-container-dark);
+        --md-sys-color-on-primary-container: var(--md-sys-color-on-primary-container-dark);
+        --md-sys-color-surface: var(--md-sys-color-surface-dark);
+        --md-sys-color-on-surface: var(--md-sys-color-on-surface-dark);
+        --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-dark);
+        --md-sys-color-surface-container-highest: var(--md-sys-color-surface-container-highest-dark);
+        --md-sys-color-surface-container: var(--md-sys-color-surface-container-dark);
+    }
+}
+
+$breakpoint-laptop: 840px;
 $braekpoint-mobile: 360px;
 
 html,
@@ -14,15 +59,47 @@ body {
     height: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 260px 1fr;
     grid-template-rows: min-content 1fr min-content;
     grid-template-areas: "nav header" "nav main" "nav footer";
 }
 
-.navifation {
-    background: darkred;
-    padding: 32px;
+.navigation {
+    background: var(--md-sys-color-surface);
+    padding-left: 10px;
+    padding-bottom: 50px;
     grid-area: nav;
+
+    &__item {
+        --selected: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        // justify-content: center;
+        // text-align: left;
+
+        &__icon {
+            font-family: "Material Symbols Outlined";
+            font-variation-settings:
+                'FILL' var(--selected),
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+            font-size: 36px;
+            line-height: 40px;
+        }
+
+        &__text {
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 40px;
+        }
+
+        &--selected {
+            --selected: 1;
+        }
+    }
 }
 
 .header {
