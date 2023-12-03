@@ -4,20 +4,23 @@
 :root {
     /* light */
     --md-sys-color-surface-light: #FEF7FF;
-    --md-sys-color-on-surface-light: #6750A4;
+    --md-sys-color-on-surface-light: #CAC4D0;
     --md-sys-color-on-secondary-container-light: #FEF7FF;
-    --md-sys-color-on-surface-variant-light: #E8DEF8;
+    --md-sys-color-on-surface-variant-light: #49454F;
+    --md-sys-color-on-variant-light: #E8DEF8; //#1D1B20; //#49454F;
     /* dark */
-    --md-sys-color-surface-dark: #121316; //-
-    --md-sys-color-on-surface-dark: #c6c6ca; //- 
-    --md-sys-color-on-secondary-container-light: #1D192B;
-    --md-sys-color-on-surface-variant-dark: red;
+    --md-sys-color-surface-dark: #141218; //-
+    --md-sys-color-on-surface-dark: #49454F;
+    --md-sys-color-on-secondary-container-dark: #1D1B20;
+    --md-sys-color-on-surface-variant-dark: #CAC4D0;
+    --md-sys-color-on-variant-dark: #4A4458;
 
     @media(prefers-color-scheme: light) {
         --md-sys-color-surface: var(--md-sys-color-surface-light);
         --md-sys-color-on-surface: var(--md-sys-color-on-surface-light);
         --md-sys-color-on-secondary-container: var(--md-sys-color-on-secondary-container-light);
         --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-light);
+        --md-sys-color-on-variant: var(--md-sys-color-on-variant-light);
     }
 
     @media(prefers-color-scheme: dark) {
@@ -25,6 +28,7 @@
         --md-sys-color-on-surface: var(--md-sys-color-on-surface-dark);
         --md-sys-color-on-secondary-container: var(--md-sys-color-on-secondary-container-dark);
         --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-dark);
+        --md-sys-color-on-variant: var(--md-sys-color-on-variant-dark);
     }
 }
 
@@ -100,6 +104,8 @@ body {
         &:hover {
             background-color: var(--md-sys-color-on-surface);
             border-radius: 20px;
+            cursor: pointer;
+            // color: var(--md-sys-color-on-secondary-container);
         }
 
         &__icon {
@@ -111,6 +117,7 @@ body {
                 'opsz' 24;
             font-size: 36px;
             line-height: var(--_line-height);
+            color: var(--md-sys-color-on-surface-variant);
         }
 
         &__text {
@@ -118,13 +125,14 @@ body {
             font-size: 18px;
             font-weight: var(--selected-wght);
             line-height: var(--_line-height);
+            color: var(--md-sys-color-on-surface-variant);
         }
 
         &--selected {
             --selected: 1;
             --selected-wght: 600;
             color: var(--md-sys-color-on-secondary-container);
-            background-color: var(--md-sys-color-on-surface-variant);
+            background-color: var(--md-sys-color-on-variant);
             border-radius: 20px;
         }
 
