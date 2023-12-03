@@ -65,18 +65,54 @@ body {
 }
 
 .navigation {
+    --_nav-orientation: var(--nav-orientation, column);
+    --_item-gap: var(--item-gap, 10px);
+    --_line-heigh: var(--line-height, 40px);
+
     background: var(--md-sys-color-surface);
+    padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 50px;
     grid-area: nav;
+    display: flex;
+    flex-direction: var(--_nav-orientation);
+    gap: 20px;
+
+    @media(max-width: $braekpoint-mobile) {
+        --nav-orientation: row;
+        --item-gap: 1px;
+        --line-height: 32px;
+        align-items: center;
+    }
+
+    @media(max-width: $breakpoint-laptop) {
+        --item-gap: 1px;
+        --line-height: 32px;
+    }
 
     &__item {
         --selected: 0;
+        --_line-height: var(--line-height, 40px);
+        --_is-item-hidden: var(--is-item-hidden, block);
         display: flex;
         flex-direction: row;
-        gap: 10px;
-        // justify-content: center;
-        // text-align: left;
+        gap: var(--_item-gap); //10px;
+
+        @media(max-width: $breakpoint-laptop) {
+            // align-items: center;
+
+            flex-direction: column;
+            text-align: center;
+            // --item-gap: 1px;
+            // --line-height: 36px;
+        }
+
+        @media(max-width: $braekpoint-mobile) {
+            flex-direction: column;
+            --is-item-hidden: none;
+            width: 100%;
+        }
+
 
         &__icon {
             font-family: "Material Symbols Outlined";
@@ -86,18 +122,23 @@ body {
                 'GRAD' 0,
                 'opsz' 24;
             font-size: 36px;
-            line-height: 40px;
+            line-height: var(--_line-height);
         }
 
         &__text {
             font-family: Roboto;
             font-size: 18px;
             font-weight: 400;
-            line-height: 40px;
+            line-height: var(--_line-height);
+            // overflow: hidden;
         }
 
         &--selected {
             --selected: 1;
+        }
+
+        &--hidden {
+            display: var(--_is-item-hidden);
         }
     }
 }
@@ -125,7 +166,7 @@ body {
 
 @media(max-width: $breakpoint-laptop) {
     .container {
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 100px 1fr;
     }
 }
 
