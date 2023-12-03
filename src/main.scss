@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300..600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 :root {
     /* light */
     --md-sys-color-surface-light: #FEF7FF;
-    --md-sys-color-on-surface-light: #1D1B20;
-    --md-sys-color-on-secondary-container-light: #1D192B;
-    --md-sys-color-on-surface-variant-light: red;
+    --md-sys-color-on-surface-light: #6750A4;
+    --md-sys-color-on-secondary-container-light: #FEF7FF;
+    --md-sys-color-on-surface-variant-light: #E8DEF8;
     /* dark */
     --md-sys-color-surface-dark: #121316; //-
     --md-sys-color-on-surface-dark: #c6c6ca; //- 
@@ -76,6 +76,7 @@ body {
 
     &__item {
         --selected: 0;
+        --selected-wght: 400;
         --_line-height: var(--line-height, 40px);
         --_is-item-hidden: var(--is-item-hidden, flex);
         --_item-padding-left: var(--item-padding-left, 20px);
@@ -86,12 +87,8 @@ body {
 
         @media(max-width: $breakpoint-laptop) {
             --item-padding-left: 1px;
-            // align-items: center;
-
             flex-direction: column;
             text-align: center;
-            // --item-gap: 1px;
-            // --line-height: 36px;
         }
 
         @media(max-width: $braekpoint-mobile) {
@@ -101,19 +98,15 @@ body {
         }
 
         &:hover {
-            color: var(--md-sys-color-on-secondary-container);
-            // --state-layer-opacity: 0.08;
-            background-color: var(--md-sys-color-on-surface-variant);
-            // opacity: 0.8;
+            background-color: var(--md-sys-color-on-surface);
             border-radius: 20px;
         }
-
 
         &__icon {
             font-family: "Material Symbols Outlined";
             font-variation-settings:
                 'FILL' var(--selected),
-                'wght' 400,
+                'wght' var(--selected-wght),
                 'GRAD' 0,
                 'opsz' 24;
             font-size: 36px;
@@ -123,13 +116,16 @@ body {
         &__text {
             font-family: Roboto;
             font-size: 18px;
-            font-weight: 400;
+            font-weight: var(--selected-wght);
             line-height: var(--_line-height);
-            // overflow: hidden;
         }
 
         &--selected {
             --selected: 1;
+            --selected-wght: 600;
+            color: var(--md-sys-color-on-secondary-container);
+            background-color: var(--md-sys-color-on-surface-variant);
+            border-radius: 20px;
         }
 
         &--hidden {
